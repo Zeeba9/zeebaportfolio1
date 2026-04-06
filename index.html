@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeeba Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0a192f;
+  color:#ccd6f6;
+}
+
+/* TOP NAME */
+.header{
+  text-align:center;
+  padding-top:40px;
+  animation: fadeDown 1s ease;
+}
+
+.header h1{
+  color:#64ffda;
+  font-size:2.5rem;
+  font-weight:bold;
+}
+
+/* HOME */
+.home{
+  height:85vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  display:flex;
+  align-items:center;
+  gap:50px;
+  width:80%;
+}
+
+/* IMAGE */
+.container img{
+  width:280px;
+  height:320px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  border:2px solid #64ffda;
+  animation: slideLeft 1.2s ease forwards;
+}
+
+/* PROFILE */
+.profile{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  animation: slideRight 1.2s ease forwards;
+  animation-delay:0.3s;
+}
+
+.profile h2{
+  color:#64ffda;
+}
+
+/* ANIMATIONS */
+@keyframes slideLeft {
+  from {opacity:0; transform: translateX(-120px);}
+  to {opacity:1; transform: translateX(0);}
+}
+
+@keyframes slideRight {
+  from {opacity:0; transform: translateX(120px);}
+  to {opacity:1; transform: translateX(0);}
+}
+
+@keyframes fadeDown {
+  from {opacity:0; transform: translateY(-50px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* ===== SLIDE 2 FIXED ===== */
+.slide2{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* 🔥 IMPORTANT FIX */
+.slide-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:stretch;
+  width:90%;
+  gap:40px;
+}
+
+/* BOX */
+.box{
+  width:48%;
+  height:80%;
+  overflow-y:auto;
+  background:rgba(255,255,255,0.06);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* HEADINGS */
+.box h2{
+  color:#64ffda;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+/* 🔥 CARD FIX (IMPORTANT) */
+.card{
+  background:rgba(255,255,255,0.08);
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:15px;
+  line-height:1.5;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* SCROLL */
+.box::-webkit-scrollbar{
+  width:5px;
+}
+.box::-webkit-scrollbar-thumb{
+  background:#64ffda;
+  border-radius:10px;
+}
+
+/* ANIMATION */
+.edu{
+  opacity:0;
+  animation: slideTop 1.2s ease forwards;
+}
+
+.proj{
+  opacity:0;
+  animation: slideBottom 1.2s ease forwards;
+  animation-delay:0.3s;
+}
+
+@keyframes slideTop{
+  from{opacity:0; transform:translateY(-150px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideBottom{
+  from{opacity:0; transform:translateY(150px);}
+  to{opacity:1; transform:translateY(0);}
+}
+/* ===== SLIDE 3 GRID ===== */
+.slide3{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  scroll-snap-align:start;
+}
+
+/* TITLE */
+.title{
+  color:#64ffda;
+  margin-bottom:30px;
+}
+
+/* GRID (3 + 3) */
+.award-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+  width:80%;
+}
+
+/* CARD */
+.award-card{
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+/* IMAGE */
+.award-card img{
+  width:100%;
+  height:150px;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+/* TEXT BELOW IMAGE */
+.award-card p{
+  margin-top:10px;
+  font-size:0.95rem;
+}
+
+/* HOVER EFFECT */
+.award-card:hover{
+  transform:translateY(-8px) scale(1.03);
+}
+/* ===== SLIDE 4 3 COLUMN ===== */
+.slide4{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  padding:40px;
+  scroll-snap-align:start;
+}
+
+/* ALL 3 BOXES */
+.slide4 .box{
+  width:30%;
+  height:80%;
+  overflow-y:auto;
+}
+
+/* ANIMATION */
+.slide4 .edu{
+  opacity:0;
+  animation: slideTop 1.2s ease forwards;
+}
+
+.slide4 .proj{
+  opacity:0;
+  animation: slideBottom 1.2s ease forwards;
+  animation-delay:0.3s;
+}
+
+/* ===== SLIDE 5 ===== */
+.slide5{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  scroll-snap-align:start;
+}
+
+/* TITLE */
+.slide5 .title{
+  color:#64ffda;
+  margin-bottom:30px;
+}
+
+/* BOX */
+.contact-box{
+  width:50%;
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ITEMS */
+.contact-item{
+  margin-bottom:20px;
+  font-size:1.1rem;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding-bottom:10px;
+}
+
+/* ANIMATION */
+.slide5{
+  opacity:0;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(100px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAME -->
+<div class="header">
+  <h1>ZEEBA BAKTEYEAR ZAMEER AHAMED</h1>
+  <p>MCA Graduate | Software Developer | SAP (FICO + ABAP) | Web Developer</p>
+</div>
+
+<!-- HOME -->
+<div class="home">
+  <div class="container">
+
+    <img src="ZEEBA.png">
+
+    <div class="profile">
+      <h2>Profile</h2>
+      <p>
+        Motivated MCA graduate with a strong foundation in computer science concepts, data structures, and software development methodologies. I have completed SAP FICO and ABAP training, gaining both functional and technical expertise in enterprise systems. I possess hands-on experience in developing academic projects in web development and Python. My technical skill set includes problem-solving, application development, and understanding of modern IT tools. I am passionate about learning new technologies and applying them to real-world solutions. I have worked on projects involving machine learning and ERP systems, enhancing my analytical and development skills. I am a quick learner with strong adaptability and teamwork abilities. I am seeking entry-level opportunities in SAP and IT domains to contribute and grow professionally.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide2">
+
+  <div class="slide-container">
+
+    <!-- EDUCATION -->
+    <div class="box edu">
+      <h2>Education</h2>
+
+      <div class="card"><b>MCA</b><br>NMAMIT (2023-2025)<br>SGPA: 9.0 / 10</div>
+      <div class="card"><b>BCA</b><br>Sri Bhuvanendra (2020-2023)<br>CGPA: 8.0 / 10</div>
+      <div class="card"><b>PUC</b><br>Christ King (2019-2020)<br>79.33%</div>
+      <div class="card"><b>SSLC</b><br>Christ King School (2017-2018)<br>81.44%</div>
+
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="box proj">
+      <h2>Major Projects</h2>
+
+      <div class="card"><b>1.AI Integrated ERP System for Medicine manufacturing industry</b><br>AI-based ERP for hospital</div>
+      <div class="card"><b>2.Potato leaf Disease Detection</b><br>ML-based leaf detection system</div>
+      <div class="card"><b>3.Food Order App</b><br>Android ordering system</div>
+      <div class="card"><b>4.Event Management Website</b><br>Booking + admin panel</div>
+      <div class="card"><b>5.Natana Tarangini</b><br>Reservation platform</div>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- ===== SLIDE 3 : AWARDS GRID ===== -->
+<div class="slide3">
+
+  <h2 class="title">Awards & Achievements</h2>
+
+  <div class="award-grid">
+
+    <div class="award-card">
+      <img src="SAP1.jpg">
+      <p>SAP ABAP PLATFORM FUNDAMENTALS </p>
+    </div>
+
+    <div class="award-card">
+      <img src="SAP2.png">
+      <p>SAP ABAP PROGRAMMING </p>
+    </div>
+
+    <div class="award-card">
+      <img src="SAP3.jpeg">
+      <p>SAP FICO </p>
+    </div>
+
+    <div class="award-card">
+      <img src="R4.jpeg">
+      <p>RESEARCH PAPER PRESENTATION & PUBLICATION</p>
+    </div>
+
+    <div class="award-card">
+      <img src="IBM5.jpg">
+      <p>IBM Certification </p>
+    </div>
+
+    <div class="award-card">
+      <img src="EXC6.jpg">
+      <p>EXCELR Certification </p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===== SLIDE 4 (3 COLUMN) ===== -->
+<div class="slide4">
+
+  <!-- SKILLS (LEFT) -->
+  <div class="box edu">
+    <h2>Skills</h2>
+
+    <div class="card">Excellent Communication</div>
+    <div class="card">Easily adaptable to new environments</div>
+    <div class="card">Team Collaboration</div>
+    <div class="card">Quick Learner</div>
+    <div class="card">Advanced Computer Knowledge</div>
+    <div class="card">Problem Solving & Logical Thinking</div>
+    <div class="card">Leadership Skills & Dedicated</div>
+  </div>
+
+  <!-- INTERNSHIP (MIDDLE) -->
+  <div class="box proj">
+    <h2>Internship</h2>
+
+    <div class="card">
+      <b>Software Developer Intern – UWS, Manipal, Udupi</b><br><br>
+
+      Completed a 6-month internship as a Software Developer at UWS, Manipal. 
+      Worked on coding, front-end development, and web designing.<br><br>
+
+      Successfully developed and delivered live projects using AI technologies. 
+      Gained hands-on experience in UI/UX design and modern web design practices.<br><br>
+
+      Built responsive and user-friendly interfaces using modern web technologies.
+    </div>
+  </div>
+
+  <!-- LANGUAGES (RIGHT) -->
+  <div class="box edu">
+    <h2>Languages</h2>
+
+    <div class="card">English</div>
+    <div class="card">Hindi</div>
+    <div class="card">Urdu</div>
+    <div class="card">Kannada</div>
+    <div class="card">Tulu</div>
+  </div>
+
+</div>
+
+<!-- ===== SLIDE 5 : CONTACT ===== -->
+<div class="slide5">
+
+  <h2 class="title">GET IN TOUCH </h2>
+
+  <div class="contact-box">
+
+    <div class="contact-item">
+      <b>Name:</b><br>
+       👩‍🎓 Zeeba Bakteyear Zameer Ahamed 
+    </div>
+
+    <div class="contact-item">
+      <b>Phone:</b><br>
+       📞7829508701
+    </div>
+
+    <div class="contact-item">
+      <b>Email:</b><br>
+      📧 zeebazeeba99@gmail.com
+    </div>
+
+    <div class="contact-item">
+      <b>Location:</b><br>
+      📍 India
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
